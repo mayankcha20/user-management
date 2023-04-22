@@ -82,7 +82,7 @@ exports.view=async (req,res)=>{
 }
 exports.editpost = async (req, res) => {
     try {
-      await Customer.findByIdAndUpdate(req.params.id,{
+      await customerm.findByIdAndUpdate(req.params.id,{
         firstName: req.body.firstname,
         lastName: req.body.lastname,
         tel: req.body.tel,
@@ -100,7 +100,7 @@ exports.editpost = async (req, res) => {
 
   exports.delete = async (req, res) => {
     try {
-      await Customer.deleteOne({ _id: req.params.id });
+      await customerm.deleteOne({ _id: req.params.id });
       res.redirect("/")
     } catch (error) {
       console.log(error);
